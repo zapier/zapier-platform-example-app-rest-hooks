@@ -37,17 +37,6 @@ const unsubscribeHook = (z, bundle) => {
 };
 
 const getRecipe = (z, bundle) => {
-  // For the test poll, you should get some real data, to aid the setup process.
-  if (bundle.meta.frontend) {
-    const promise = z.request({
-      url: 'http://57b20fb546b57d1100a3c405.mockapi.io/api/recipes/',
-      params: {
-        style: bundle.inputData.style
-      }
-    });
-    return promise.then((response) => JSON.parse(response.content));
-  }
-
   // bundle.cleanedRequest will include the parsed JSON object (if it's not a
   // test poll) and also a .querystring property with the URL's query string.
   const recipe = {
@@ -60,6 +49,17 @@ const getRecipe = (z, bundle) => {
   };
 
   return [recipe];
+};
+
+const getSampleRecipe = (z, bundle) => {
+  // For the test poll, you should get some real data, to aid the setup process.
+  const promise = z.request({
+    url: 'http://57b20fb546b57d1100a3c405.mockapi.io/api/recipes/',
+    params: {
+      style: bundle.inputData.style
+    }
+  });
+  return promise.then((response) => JSON.parse(response.content));
 };
 
 // We recommend writing your triggers separate like this and rolling them
@@ -89,6 +89,16 @@ module.exports = {
     performSubscribe: subscribeHook,
     performUnsubscribe: unsubscribeHook,
 
-    perform: getRecipe
+    perform: getRecipe,
+    performList: getSampleRecipe,
+
+    sample: {
+      id: 1,
+      name: 'Example Name',
+      directions: 'Example Directions',
+      style: 'Example Style',
+      authorId: 1,
+      createdAt: 1471984229
+    }
   }
 };
