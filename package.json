@@ -1,8 +1,8 @@
 {
-  "name": "zapier-platform-example-app-hook",
+  "name": "zapier-platform-example-app-rest-hooks",
   "version": "1.0.0",
   "description": "An example app for the Zapier platform.",
-  "repository": "zapier/zapier-platform-example-app-hook",
+  "repository": "zapier/zapier-platform-example-app-rest-hooks",
   "homepage": "https://zapier.com/",
   "author": "Bryan Helmig <bryan@zapier.com>",
   "license": "BSD-3-Clause",
