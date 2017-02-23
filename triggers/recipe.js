@@ -51,7 +51,7 @@ const getRecipe = (z, bundle) => {
   return [recipe];
 };
 
-const getSampleRecipe = (z, bundle) => {
+const getFallbackRealRecipe = (z, bundle) => {
   // For the test poll, you should get some real data, to aid the setup process.
   const promise = z.request({
     url: 'http://57b20fb546b57d1100a3c405.mockapi.io/api/recipes/',
@@ -90,7 +90,7 @@ module.exports = {
     performUnsubscribe: unsubscribeHook,
 
     perform: getRecipe,
-    performList: getSampleRecipe,
+    performList: getFallbackRealRecipe,
 
     sample: {
       id: 1,
