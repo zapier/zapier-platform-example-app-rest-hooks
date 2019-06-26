@@ -1,3 +1,9 @@
+# MOVED
+
+This code has been moved to: https://github.com/zapier/zapier-platform/tree/master/example-apps/rest-hooks
+
+---
+
 # "REST Hooks" Trigger Example App For Zapier Platform
 
 [![Build Status](https://travis-ci.org/zapier/zapier-platform-example-app-rest-hooks.svg?branch=master)](https://travis-ci.org/zapier/zapier-platform-example-app-rest-hooks)
